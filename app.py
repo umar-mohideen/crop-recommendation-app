@@ -10,14 +10,14 @@ model = joblib.load('crop_model.pkl')
 st.title("🌾 Crop Recommendation System")
 st.write("Enter soil and weather details to get a crop suggestion.")
 
-# Input sliders
-n = st.slider("Nitrogen (N)", 0, 140, 90)
-p = st.slider("Phosphorus (P)", 5, 145, 42)
-k = st.slider("Potassium (K)", 5, 205, 43)
-temperature = st.slider("Temperature (°C)", 10.0, 45.0, 25.0)
-humidity = st.slider("Humidity (%)", 10.0, 100.0, 80.0)
-ph = st.slider("pH", 3.5, 9.5, 6.5)
-rainfall = st.slider("Rainfall (mm)", 20.0, 300.0, 200.0)
+# Input boxes
+n = st.number_input("Nitrogen (N)", min_value=0, max_value=140, value=90)
+p = st.number_input("Phosphorus (P)", min_value=5, max_value=145, value=42)
+k = st.number_input("Potassium (K)", min_value=5, max_value=205, value=43)
+temperature = st.number_input("Temperature (°C)", min_value=10.0, max_value=45.0, value=25.0)
+humidity = st.number_input("Humidity (%)", min_value=10.0, max_value=100.0, value=80.0)
+ph = st.number_input("pH", min_value=3.5, max_value=9.5, value=6.5)
+rainfall = st.number_input("Rainfall (mm)", min_value=20.0, max_value=300.0, value=200.0)
 
 # Predict button
 if st.button("Predict Crop"):
